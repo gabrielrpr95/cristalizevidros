@@ -1,0 +1,179 @@
+/* ============================================
+   THEME: Ocean Breeze — Azul oceano saturado
+   Conexão com a vista de Ilhabela
+   ============================================ */
+
+:root {
+  --c-bg: #e0f2fe;
+  --c-white: #f0f9ff;
+  --c-ink: #082f49;
+  --c-ink-soft: #0c4a6e;
+  --c-muted: #475569;
+  --c-line: #bae6fd;
+  --c-accent: #0284c7;
+  --c-accent-deep: #075985;
+  --c-accent-soft: #bae6fd;
+  --c-mint: #0891b2;
+}
+
+body { background: var(--c-bg); color: var(--c-ink); }
+
+/* Header com toque de cor */
+.header {
+  background: rgba(240, 249, 255, 0.82);
+  border-bottom-color: rgba(186, 230, 253, 0.8);
+}
+.logo-text { color: var(--c-ink); }
+.nav-list a { color: var(--c-ink-soft); }
+.nav-cta { background: var(--c-accent); color: #ffffff !important; }
+.nav-cta:hover { background: var(--c-accent-deep); }
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(ellipse at 80% -10%, #7dd3fc 0%, transparent 55%),
+    radial-gradient(ellipse at -10% 80%, #67e8f9 0%, transparent 50%),
+    linear-gradient(180deg, #f0f9ff 0%, #bae6fd 50%, #7dd3fc 100%);
+}
+.hero-badge {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--c-accent-deep);
+  border-color: rgba(2, 132, 199, 0.25);
+}
+.hero-title { color: var(--c-ink); }
+.hero-title .accent {
+  background: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-subtitle { color: var(--c-ink-soft); }
+
+.stat {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+.stat strong { color: var(--c-accent-deep); }
+.stat span { color: var(--c-muted); }
+
+/* Gotas refinadas escorrendo pelo vidro */
+.water-drop {
+  width: 2px !important;
+  border-radius: 0 !important;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 35%,
+    rgba(255, 255, 255, 0.85) 100%) !important;
+  rotate: 0deg !important;
+  box-shadow: none !important;
+  filter: blur(0.3px);
+  animation: drip linear infinite !important;
+  overflow: visible;
+}
+.water-drop::after {
+  top: auto !important;
+  left: 50% !important;
+  bottom: -4px;
+  width: 9px !important;
+  height: 12px !important;
+  border-radius: 50% 50% 50% 50% / 55% 55% 45% 45% !important;
+  background: radial-gradient(circle at 35% 30%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(186, 230, 253, 0.85) 50%,
+    rgba(2, 132, 199, 0.5) 100%) !important;
+  box-shadow:
+    inset 1.5px -1.5px 3px rgba(255, 255, 255, 0.9),
+    inset -1px 1px 2px rgba(2, 132, 199, 0.2),
+    0 3px 8px rgba(2, 132, 199, 0.3) !important;
+  filter: none !important;
+  translate: -50% 0;
+}
+
+/* Cada gota: altura do rastro + posição + velocidade diferentes */
+.d1  { height: 90px;  top: -100px; right: 10%;  left: auto; animation-duration: 14s; animation-delay: -2s;  }
+.d2  { height: 55px;  top: -70px;  left: 12%;   right: auto; animation-duration: 18s; animation-delay: -10s; }
+.d3  { height: 110px; top: -130px; right: 22%;  left: auto; animation-duration: 16s; animation-delay: -6s;  }
+.d4  { height: 45px;  top: -60px;  left: 22%;   right: auto; animation-duration: 20s; animation-delay: -14s; }
+.d5  { height: 75px;  top: -90px;  left: 38%;   right: auto; animation-duration: 15s; animation-delay: -1s;  }
+.d6  { height: 95px;  top: -115px; right: 30%;  left: auto; animation-duration: 17s; animation-delay: -9s;  }
+.d7  { height: 50px;  top: -65px;  left: 50%;   right: auto; animation-duration: 19s; animation-delay: -4s;  }
+.d8  { height: 70px;  top: -85px;  right: 40%;  left: auto; animation-duration: 13s; animation-delay: -7s;  }
+.d9  { height: 80px;  top: -95px;  left: 60%;   right: auto; animation-duration: 16s; animation-delay: -12s; }
+.d10 { height: 40px;  top: -55px;  right: 55%;  left: auto; animation-duration: 21s; animation-delay: -3s;  }
+
+@keyframes drip {
+  0%   { translate: 0 0;     opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { translate: 0 100vh; opacity: 0; }
+}
+
+/* Buttons */
+.btn-primary { background: var(--c-accent-deep); color: #ffffff; }
+.btn-primary:hover { background: var(--c-accent); }
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--c-ink);
+  border-color: rgba(2, 132, 199, 0.25);
+}
+.btn-ghost:hover {
+  background: #ffffff;
+  border-color: var(--c-accent);
+}
+
+/* Sections */
+h2 { color: var(--c-ink); }
+h2 em { color: var(--c-accent); }
+p { color: var(--c-ink-soft); }
+.section-head p { color: var(--c-muted); }
+
+.services { background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%); }
+.service-card {
+  background: #ffffff;
+  border-color: rgba(186, 230, 253, 0.7);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.06);
+}
+.service-card:hover {
+  border-color: var(--c-accent);
+  box-shadow: 0 12px 32px rgba(2, 132, 199, 0.15);
+}
+.service-icon {
+  background: linear-gradient(135deg, #bae6fd 0%, #67e8f9 100%);
+  color: var(--c-accent-deep);
+}
+.service-card.highlight {
+  background: linear-gradient(160deg, #0369a1 0%, #075985 100%);
+  color: #ffffff;
+}
+.service-card.highlight h3,
+.service-card.highlight p { color: #ffffff; }
+.service-card.highlight .service-icon {
+  background: rgba(255, 255, 255, 0.15);
+  color: #67e8f9;
+}
+.card-link { color: #67e8f9; }
+
+/* About */
+.about { background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 100%); }
+.about-list li {
+  color: var(--c-ink);
+  border-bottom-color: rgba(2, 132, 199, 0.2);
+}
+
+/* Diferenciais */
+.diferenciais { background: #f0f9ff; }
+.diff-item { border-left-color: #7dd3fc; }
+.diff-num { color: var(--c-accent); }
+
+/* Contact */
+.contact { background: linear-gradient(160deg, #0c4a6e 0%, #075985 50%, #0e7490 100%); }
+.contact h2 em { color: #67e8f9; }
+
+/* Footer */
+.footer {
+  background: #f0f9ff;
+  border-top-color: rgba(186, 230, 253, 0.8);
+}
+.footer-brand p { color: var(--c-muted); }
+.footer-links a { color: var(--c-ink-soft); }
+.footer-links a:hover { color: var(--c-accent); }
